@@ -13,7 +13,7 @@ use Quickweb\DotenvEditor\DotenvEditor as Env;
 use Quickweb\DotenvEditor\Exceptions\DotEnvException;
 use Illuminate\Http\Request;
 
-class EnvController extends EnvController
+class SetupController extends EnvController
 {
 
     public function getConfig()
