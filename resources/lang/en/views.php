@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: Fabian
@@ -22,15 +23,15 @@ return [
     | Title
     |--------------------------------------------------------------------------
     */
-    'title'     => '.env-Editor',
+    'title'     => 'Edit setup and Environment variables',
 
     /*
     |--------------------------------------------------------------------------
     | View overview
     |--------------------------------------------------------------------------
     */
-    'overview_title'                => 'Your current .env-file',
-    'overview_text'                 => 'Here you can see the content of your current active .env.<br>Click <strong>load</strong> to show the content.',
+    'overview_title'                => 'Your current setup-file',
+    'overview_text'                 => 'Here you can see the content of your current active setup.<br>Click <strong>load</strong> to show the content.',
     'overview_button'               => 'Load',
     'overview_table_key'            => 'Key',
     'overview_table_value'          => 'Value',
@@ -52,9 +53,9 @@ return [
     |--------------------------------------------------------------------------
     */
     'addnew_title'      => 'Add new key-value-pair',
-    'addnew_text'       => 'Here you can add a new key-value-pair to your <strong>current</strong> .env-file.<br>To be sure, create a backup before under the backup-tab.',
+    'addnew_text'       => 'Here you can add a new key-value-pair to your <strong>current</strong> setup file.<br>To be sure, create a backup before under the backup-tab.',
     'addnew_label_key'  => 'Key',
-    'addnew_label_value'=> 'Value',
+    'addnew_label_value' => 'Value',
     'addnew_button_add' => 'Add',
 
     /*
@@ -62,12 +63,12 @@ return [
     | View backup
     |--------------------------------------------------------------------------
     */
-    'backup_title_one'              => 'Save your current .env-file',
+    'backup_title_one'              => 'Save your current setup-file',
     'backup_create'                 => 'Create Backup',
-    'backup_download'               => 'Download Current .env',
+    'backup_download'               => 'Download Current setup',
     'backup_title_two'              => 'Your available backups',
     'backup_restore_text'           => 'Here you can restore one of your available backups.',
-    'backup_restore_warning'        => 'This overwrites your active .env! Be sure to backup your currently active .env-file!',
+    'backup_restore_warning'        => 'This overwrites your active setup! Be sure to backup your currently active setup-file!',
     'backup_no_backups'             => 'You have no backups available.',
     'backup_table_nr'               => 'Nr.',
     'backup_table_date'             => 'Date',
@@ -90,7 +91,7 @@ return [
     */
     'upload_title'  => 'Upload a backup',
     'upload_text'   => 'Here you can upload a backup from your computer.',
-    'upload_warning'=> '<strong>Warning:</strong> This will override your currently active .env-file. Be sure, to create a backup before uploading.',
+    'upload_warning' => '<strong>Warning:</strong> This will override your currently active setup-file. Be sure, to create a backup before uploading.',
     'upload_label'  => 'Pick a file',
     'upload_button' => 'Upload',
 
@@ -99,7 +100,7 @@ return [
     | Messages from View
     |--------------------------------------------------------------------------
     */
-    'new_entry_added'   => 'New key-value-pair was successfully added to your .env!',
+    'new_entry_added'   => 'New key-value-pair was successfully added to your setup!',
     'entry_edited'      => 'Key-value-pair was edited successfully!',
     'entry_deleted'     => 'Key-value-pair was deleted successfully!',
     'delete_entry'      => 'Delete an entry',
