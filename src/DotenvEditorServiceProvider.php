@@ -25,7 +25,7 @@ class DotenvEditorServiceProvider extends ServiceProvider
                 __DIR__ . '/../config/dotenveditor.php' => config_path('dotenveditor.php'),
                 __DIR__ . '/../config/setup.php' => config_path('setup.php'),
                 __DIR__ . '/../config/setupeditor.php' => config_path('setupeditor.php'),
-                __DIR__ . '/../config/setup.stub' => config_path('setup.stub'),
+                __DIR__ . '/../config/setup.txt' => config_path('setup.txt'),
             ],
             'config'
         );
