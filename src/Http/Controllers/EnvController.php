@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: Fabian
@@ -6,10 +7,10 @@
  * Time: 06:17
  */
 
-namespace Brotzka\DotenvEditor\Http\Controllers;
+namespace Quickweb\DotenvEditor\Http\Controllers;
 
-use Brotzka\DotenvEditor\DotenvEditor as Env;
-use Brotzka\DotenvEditor\Exceptions\DotEnvException;
+use Quickweb\DotenvEditor\DotenvEditor as Env;
+use Quickweb\DotenvEditor\Exceptions\DotEnvException;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 

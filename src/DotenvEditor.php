@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: Fabian
@@ -6,9 +7,9 @@
  * Time: 07:19
  */
 
-namespace Brotzka\DotenvEditor;
+namespace Quickweb\DotenvEditor;
 
-use Brotzka\DotenvEditor\Exceptions\DotEnvException;
+use Quickweb\DotenvEditor\Exceptions\DotEnvException;
 use Dotenv\Exception\InvalidPathException;
 
 class DotenvEditor
@@ -24,15 +25,16 @@ class DotenvEditor
     private $env;
     private $backupPath;
     private $autoBackup = false;
+    public $config;
 
     /**
      * DotenvEditor constructor
      */
-    public function __construct()
+    public function __construct($config)
     {
-        $backupPath      = str_finish(config('dotenveditor.backupPath'), '/');
-        $env             = config('dotenveditor.pathToEnv');
-        $filePermissions = config('dotenveditor.filePermissions');
+        $backupPath      = str_finish(config($config . '.backupPath'), '/');
+        $env             = config($config . '.pathToEnv');
+        $filePermissions = config($config . '.filePermissions');
 
         if (!file_exists($env)) {
             return false;
@@ -44,6 +46,7 @@ class DotenvEditor
             mkdir($backupPath, $filePermissions, true);
         }
         $this->backupPath = $backupPath;
+        $this->config = $config;
     }
 
     /*
@@ -54,6 +57,11 @@ class DotenvEditor
     |
     |
      */
+    public function setConfig($filename)
+    {
+        $this->config = $filename;
+    }
+
     /**
      * Returns the current backup-path
      *
@@ -226,7 +234,6 @@ class DotenvEditor
         } else {
             throw new DotEnvException(trans('dotenv-editor::class.requested_backup_not_found'), 0);
         }
-
     }
 
     /**
@@ -442,7 +449,6 @@ class DotenvEditor
                         $env[$envKey] = $dataValue;
                     }
                 }
-
             }
             return $this->save($env);
         }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: Fabian
@@ -6,7 +7,7 @@
  * Time: 07:22
  */
 
-namespace Brotzka\DotenvEditor;
+namespace Quickweb\DotenvEditor;
 
 use Illuminate\Support\ServiceProvider;
 

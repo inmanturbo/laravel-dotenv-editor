@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: Fabian
@@ -44,7 +45,7 @@ return [
 
     // Config route group
     'route'           => [
-        'namespace'  => 'Brotzka\DotenvEditor\Http\Controllers',
+        'namespace'  => 'Quickweb\DotenvEditor\Http\Controllers',
         'prefix'     => 'admin/env',
         'as'         => 'admin.env.',
         'middleware' => ['web', 'admin'],

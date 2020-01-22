@@ -1,31 +1,36 @@
 {
-    "name": "brotzka/laravel-dotenv-editor",
-    "description": "A package for editing the .env file in your Laravel root.",
-    "keywords": ["laravel", "dotenv", "dotenv-editor"],
+    "name": "inmanturbo/laravel-dotenv-editor",
+    "description": "A fork from Brotza/laravel-dotenv-editor",
+    "keywords": [
+        "laravel",
+        "dotenv",
+        "dotenv-editor"
+    ],
     "type": "library",
     "license": "MIT",
     "authors": [
         {
-            "name": "Fabian Hagen",
-            "email": "fabianhagen87@gmail.com"
+            "name": "inmanturbo",
+            "email": "inman.turbo@gmail.com"
         }
     ],
     "minimum-stability": "stable",
     "require": {
-        "php": ">=5.5.9"
+        "php": "^7.2",
+        "laravel/helpers": "^1.1"
     },
     "autoload": {
         "psr-4": {
-            "Brotzka\\DotenvEditor\\": "src/"
+            "Quickweb\\DotenvEditor\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Brotzka\\DotenvEditor\\DotenvEditorServiceProvider"
+                "Quickweb\\DotenvEditor\\DotenvEditorServiceProvider"
             ],
             "aliases": {
-                "DotenvEditor": "Brotzka\\DotenvEditor\\DotenvEditorFacade"
+                "DotenvEditor": "Quickweb\\DotenvEditor\\DotenvEditorFacade"
             }
         }
     }

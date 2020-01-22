@@ -6,7 +6,8 @@
  * Date: 28.07.16
  * Time: 06:08
  */
-namespace Brotzka\DotenvEditor\Exceptions;
+
+namespace Quickweb\DotenvEditor\Exceptions;
 
 use Exception;
 

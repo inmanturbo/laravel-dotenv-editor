@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: Fabian
@@ -6,7 +7,7 @@
  * Time: 07:20
  */
 
-namespace Brotzka\DotenvEditor;
+namespace Quickweb\DotenvEditor;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -14,6 +15,6 @@ class DotenvEditorFacade extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'brotzka-dotenveditor';
+        return 'quickweb-dotenveditor';
     }
 }
