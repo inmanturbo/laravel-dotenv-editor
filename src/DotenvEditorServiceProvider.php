@@ -1,7 +1,5 @@
 <?php
 
-
-
 namespace Quickweb\DotenvEditor;
 
 use Illuminate\Support\ServiceProvider;
@@ -54,6 +52,6 @@ class DotenvEditorServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__ . '/../config/dotenveditor.php', 'dotenveditor');
         $this->mergeConfigFrom(__DIR__ . '/../config/setup.php', 'setup');
         $this->mergeConfigFrom(__DIR__ . '/../config/setupeditor.php', 'setupeditor');
-        copy(__DIR__ . '/../config/setup.stub', base_path('config/setup.stub'));
+        //copy(__DIR__ . '/../config/setup.stub', base_path('config/setup.stub'));
     }
 }
