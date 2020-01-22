@@ -16,7 +16,7 @@ return [
     | Change the paths, so they fit your needs
     |
      */
-    'pathToEnv'       => base_path('/config/setup.txt'),
+    'pathToEnv'       => config_path('setup.txt'),
     'backupPath'      => resource_path('backups/dotenv-editor/'),
     'filePermissions' => env('FILE_PERMISSIONS', 0755),
 
