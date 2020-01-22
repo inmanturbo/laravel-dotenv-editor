@@ -23,7 +23,7 @@ return [
     | Title
     |--------------------------------------------------------------------------
     */
-    'title'     => 'Edit setup and Environment variables',
+    'title'     => 'Edit Setup and Environment variables',
 
     /*
     |--------------------------------------------------------------------------
