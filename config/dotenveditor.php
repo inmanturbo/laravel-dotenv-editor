@@ -36,18 +36,18 @@ return [
     'activated'       => true,
 
     /* Default view */
-    // 'template'        => 'dotenv-editor::master',
-    // 'overview'        => 'dotenv-editor::overview',
+     'template'        => 'dotenv-editor::master',
+     'overview'        => 'dotenv-editor::overview',
 
     /* This is my custom view, do not using */
-    'template'        => 'adminlte::page',
-    'overview'        => 'dotenv-editor::overview-adminlte',
+    //'template'        => 'adminlte::page',
+    //'overview'        => 'dotenv-editor::overview-adminlte',
 
     // Config route group
     'route'           => [
         'namespace'  => 'Quickweb\DotenvEditor\Http\Controllers',
         'prefix'     => 'admin/env',
         'as'         => 'admin.env.',
-        'middleware' => ['web', 'admin'],
+        'middleware' => ['web'],
     ],
 ];
