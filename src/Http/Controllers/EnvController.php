@@ -16,16 +16,23 @@ use Illuminate\Routing\Controller as BaseController;
 
 class EnvController extends BaseController
 {
-    protected $env;
+
+    public function getConfig()
+    {
+        return new Env('dotenveditor');
+    }
+    // protected $env;
     /**
      * [__construct description]
      *
      * @param Env $env DotenvEditor
      */
-    public function __construct(Env $env)
-    {
-        $this->env = $env;
-    }
+    // public function __construct(Env $env)
+    // {
+    //     $env->setConfig('setup');
+    //     $this->env = $env;
+    //     // $this->env->setConfig('setup');
+    // }
 
     /**
      * Shows the overview, where you can visually edit your .env-file.
@@ -36,16 +43,21 @@ class EnvController extends BaseController
      */
     public function overview(Request $request)
     {
-        $data['values'] = $this->env->getContent();
+        $env = $this->getConfig();
+
+        // $data['values'] = $this->env->getContent();
+        $data['values'] = $env->getContent();
         //$data['json'] = json_encode($data['values']);
         try {
-            $data['backups'] = $this->env->getBackupVersions();
+            // $data['backups'] = $this->env->getBackupVersions();
+            $data['backups'] = $env->getBackupVersions();
         } catch (DotEnvException $e) {
             $data['backups'] = false;
         }
 
         $data['url'] = $request->path();
-        return view(config('dotenveditor.overview'), $data);
+        // return view(config($this->env->config . '.overview'), $data);
+        return view(config($env->config . '.overview'), $data);
     }
 
     /**
@@ -57,7 +69,10 @@ class EnvController extends BaseController
      */
     public function add(Request $request)
     {
-        $this->env->addData(
+
+        $env = $this->getConfig();
+        // $this->env->addData(
+        $env->addData(
             [
                 $request->key => $request->value,
             ]
@@ -74,7 +89,9 @@ class EnvController extends BaseController
      */
     public function update(Request $request)
     {
-        $this->env->changeEnv(
+        $env = $this->getConfig();
+        // $this->env->changeEnv(
+        $env->changeEnv(
             [
                 $request->key => $request->value,
             ]
@@ -91,7 +108,9 @@ class EnvController extends BaseController
      */
     public function getDetails($timestamp = null)
     {
-        return $this->env->getAsJson($timestamp);
+        $env = $this->getConfig();
+        // return $this->env->getAsJson($timestamp);
+        return $env->getAsJson($timestamp);
     }
 
     /**
@@ -101,7 +120,9 @@ class EnvController extends BaseController
      */
     public function createBackup()
     {
-        $this->env->createBackup();
+        $env = $this->getConfig();
+        // $this->env->createBackup();
+        $env->createBackup();
         return back()->with('dotenv', trans('dotenv-editor::views.controller_backup_created'));
     }
 
@@ -114,7 +135,9 @@ class EnvController extends BaseController
      */
     public function deleteBackup($timestamp)
     {
-        $this->env->deleteBackup($timestamp);
+        $env = $this->getConfig();
+        // $this->env->deleteBackup($timestamp);
+        $env->deleteBackup($timestamp);
         return back()->with('dotenv', trans('dotenv-editor::views.controller_backup_deleted'));
     }
 
@@ -127,8 +150,10 @@ class EnvController extends BaseController
      */
     public function restore($backuptimestamp)
     {
-        $this->env->restoreBackup($backuptimestamp);
-        return redirect(config('dotenveditor.route.prefix'));
+        $env = $this->getConfig();
+        // $this->env->restoreBackup($backuptimestamp);
+        $env->restoreBackup($backuptimestamp);
+        return redirect(config($this->env->config . '.route.prefix'));
     }
 
     /**
@@ -140,7 +165,9 @@ class EnvController extends BaseController
      */
     public function delete(Request $request)
     {
-        $this->env->deleteData([$request->key]);
+        $env = $this->getConfig();
+        // $this->env->deleteData([$request->key]);
+        $env->deleteData([$request->key]);
     }
 
     /**
@@ -152,8 +179,10 @@ class EnvController extends BaseController
      */
     public function download($filename = false)
     {
+        $env = $this->getConfig();
         if ($filename) {
-            $file = $this->env->getBackupPath() . $filename . '_env';
+            // $file = $this->env->getBackupPath() . $filename . '_env';
+            $file = $env->getBackupPath() . $filename . '_env';
             return response()->download($file, $filename . '.env');
         }
         return response()->download(base_path('.env'), '.env');
@@ -168,8 +197,10 @@ class EnvController extends BaseController
      */
     public function upload(Request $request)
     {
+        $env = $this->getConfig();
         $file = $request->file('backup');
         $file->move(base_path(), '.env');
-        return redirect(config('dotenveditor.route.prefix'));
+        // return redirect(config($this->env->config . '.route.prefix'));
+        return redirect(config($env->config . '.route.prefix'));
     }
 }
