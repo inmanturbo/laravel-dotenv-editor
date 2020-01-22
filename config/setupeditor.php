@@ -33,7 +33,7 @@ return [
      */
 
     // Activate or deactivate the graphical interface
-    'activated'       => false,
+    'activated'       => true,
 
     /* Default view */
     'template'        => 'dotenv-editor::master',
