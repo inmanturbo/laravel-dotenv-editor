@@ -1,11 +1,6 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: Fabian
- * Date: 12.05.16
- * Time: 07:22
- */
+
 
 namespace Quickweb\DotenvEditor;
 
@@ -47,7 +42,7 @@ class DotenvEditorServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(
-            'brotzka-dotenveditor',
+            'quickweb-dotenveditor',
             function () {
                 return new DotenvEditor();
             }
