@@ -1,11 +1,6 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: Fabian
- * Date: 19.07.16
- * Time: 06:04
- */
+
 if (config('dotenveditor.activated')) {
     Route::group(
         config('dotenveditor.route'),
